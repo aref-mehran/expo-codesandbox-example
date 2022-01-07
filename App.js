@@ -1,7 +1,10 @@
 import * as React from "react";
 import { Text, View, StyleSheet, Button } from "react-native";
 import { Audio } from "expo-av";
+import * as Speech from "expo-speech";
+
 import ButtonExample from "./ButtonExample";
+
 export default function App() {
   const [sound, setSound] = React.useState();
 
@@ -13,7 +16,8 @@ export default function App() {
     setSound(sound);
 
     console.log("Playing Sound");
-    await sound.playAsync();
+    // await sound.playAsync();
+    Speech.speak("hellow ");
   }
 
   React.useEffect(() => {
